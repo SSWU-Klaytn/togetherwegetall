@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+      integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+      crossorigin="anonymous"></script>
+    
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.6">
+
+    <title>Together Wegetall</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/album/">
+    <link href="http://fonts.googleapis.com/earlyaccess/jejugothic.css" rel="stylesheet"> 
+    <!-- Bootstrap core CSS -->
+    <link href="/docs/4.4/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="/docs/4.4/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="/docs/4.4/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="/docs/4.4/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="manifest" href="/docs/4.4/assets/img/favicons/manifest.json">
+    <link rel="mask-icon" href="/docs/4.4/assets/img/favicons/safari-pinned-tab.svg" color="#563d7c">
+    <link rel="icon" href="/docs/4.4/assets/img/favicons/favicon.ico">
+    <meta name="msapplication-config" content="/docs/4.4/assets/img/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#563d7c">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+      h4,p{
+     font-family: 'Jeju Gothic', sans-serif;
+      }
+      a:hover{
+        text-decoration: none;
+      }
+    </style>
+    <!-- Custom styles for this template -->
+  </head>
+
+  <body class="bg-light">
+
+    <!-- 상단 -->
+    <header>
+      <div class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="container d-flex justify-content-between">
+          <!-- 사이드바 버튼 -->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar1" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>  
+          </button>      
+          <a href="index.html" class="navbar-brand d-flex align-items-center">
+            <img src="logo.png" width="250" height="60" fill="none" style="padding-top: 5px; text-align: center;" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="mr-2" viewBox="0 0 24 24" focusable="false"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></img>
+          </a>
+          <!-- 로그인/로그아웃 -->
+          <div>
+            <button class="navbar-toggler" id="login" type="button" data-toggle="collapse" data-target="#collapsibleNavbar2" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+              로그인 
+            </button>
+            <button class="navbar-toggler" id="logout" style="display: none;" onclick="App.handleLogout()" type="button" data-toggle="collapse" data-target="#collapsibleNavbar2" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+              로그아웃
+            </button>
+          </div>
+        </div> 
+      </div>
+    </header>
+    <!-- 사이드 바 -->
+    <div class="collapse bg-dark" id="collapsibleNavbar1" style="margin: auto; text-align: center;">
+      <div class="container">
+        <div class="navbar navbar-inverse">
+          <a href="mypage.html" style="color:orange;">마이페이지</a> <hr/>
+          <a href="AllProjects.html" style="color:orange;">모든 프로젝트</a> <hr/>
+          <a href="PopulerProjects.html" style="color:orange;">인기 프로젝트</a> <hr/>
+          <a href="#" onclick="javascript:yet()" style="color:orange;">분야별 프로젝트</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="collapse bg-dark" id="collapsibleNavbar2" style="margin: auto; text-align: center;">
+      <div class="container">
+        <div class="navbar navbar-inverse">
+          <div class="form-group" style="float: top; height: 105px; width: 300px;">
+            <label for="keystore" style="color:orange; font-size: large; float: left; padding-bottom: 5%;">Keystore</label></br>
+            <input type="file" class="form-control" id="keystore" style="height: 37px; color: black; background-color: white; font-size: small; float: left;" onchange="App.handleImport()">          
+            <p class="help-block"style="color:orange; font-size: small; float: left;" ></p>
+          </div>
+          <div class="form-group" style="float: top; height: 105px; width: 300px;">
+            <label for="input-password" style="color:orange; font-size: large; float: left; padding-bottom: 5%;">비밀번호</label>
+            <input type="password" class="form-control" id="input-password" style="color:orange; float: left; height: 37px;" onchange="App.handlePassword()" onKeypress="javascript:if(event.keyCode==13) {App.handleLogin()}"> 
+            <p class="help-block" id="message" style="color:orange; font-size: small; float: left;" ></p>
+          </div>
+          <div class="form-group" style="height: 105px; width: 300px;">
+            <button type="button" class="btn btn-default" id="submit" style="font-size: large; color:orange; " onclick="App.handleLogin()">제출</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal" style="font-size: large; color:orange;" >닫기</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<main role="main">
+  <section class="jumbotron text-center">
+    <div class="container">
+      <h1>Together Wegetall</h1>
+      <p class="lead text-muted">
+        함께라면(Together) 모든 것을 이룰 수 있습니다(Wegetall)<br>
+        우리는 다함께 살아가는 사회를 지향합니다.<br>
+        클릭 한 번으로 도움이 필요한 프로젝트의 후원자가 되어보세요.
+      </p>
+      <p>
+        <a href="#" onclick="javascript:yet()" class="btn btn-primary my-2">프로젝트 올리기</a>
+        <a href="AllProjects.html" class="btn btn-secondary my-2">프로젝트 둘러보기</a>
+      </p>
+    </div>
+  </section>
+
+  
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <h4>추천 프로젝트</h4>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img src="project01.jpg" width="100%" height="225"> 
+            <div class="card-body">
+              <p class="card-text">2020년 달력<br/>달달무슨달쟁반같이둥근달<br/><small>경자년</small></p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><a href="projectstory.html">View</a></button>
+                </div>
+                <small class="text-muted">95%</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4">  
+          <div class="card mb-4 shadow-sm">
+            <img src="project02.jpg" width="100%" height="225"> 
+            <div class="card-body">
+              <p class="card-text">누구나 손쉽게 볶음밥 완성!<br/>집에서도 여행에서도 간편하게 즐기세요<br/><small>요리사</small></p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                </div>
+                <small class="text-muted">55%</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img src="project03.jpg" width="100%" height="225"> 
+            <div class="card-body">
+              <p class="card-text">Tripful Moment<br/>미용실에서 볼 것 같은 그런 잡지<br/><small>탈색모</small></p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                </div>
+                <small class="text-muted">23%</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <br>
+            <a href="AllProjects.html" style="color: black;"><h4>모든 프로젝트</h4></a>
+        </div>
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img src="project04.jpg" width="100%" height="225"> 
+            <div class="card-body">
+              <p class="card-text">이것은 반지인가 포장용품인가<br/>용도를 찾아서 쓸 사람을 구합니다.<br/><small>인스타갬성</small></p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                </div>
+                <small class="text-muted">38%</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img src="project05.jpg" width="100%" height="225"> 
+            <div class="card-body">
+              <p class="card-text">the green of iceland<br/>떠나지 못하는 당신을 위한 풍경 사진집<br/><small>사진작가</small></p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                </div>
+                <small class="text-muted">16%</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img src="project06.jpg" width="100%" height="225"> 
+            <div class="card-body">
+              <p class="card-text">3색양말<br/>남의집 갈 때 신는 자랑용 양말<br/><small>파랑주황</small></p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                </div>
+                <small class="text-muted">64%</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <br>
+          <a href="PopulerProjects.html".html" style="color: black;"><h4>인기 프로젝트</h4></a>
+      </div>
+      <div class="col-md-4">
+      </div>
+      <div class="col-md-4">
+      </div>
+      <div class="col-md-4">
+        <div class="card mb-4 shadow-sm">
+          <img src="project07.jpg" width="100%" height="225"> 
+          <div class="card-body">
+            <p class="card-text">느낌있는 에코백<br/>약간의 포인트를 원하는 당신을 위해<br/><small>echo</small></p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+              </div>
+              <small class="text-muted">41%</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img src="project08.jpg" width="100%" height="225"> 
+            <div class="card-body">
+              <p class="card-text">Beige Umbrella<br/>☂☂☂☂☂☂☂☂☂☂☂☂☂<br/><small>보리보리쌀</small></p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                </div>
+                <small class="text-muted">195%</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img src="project09.jpg" width="100%" height="225"> 
+            <div class="card-body">
+              <p class="card-text">★신☆년★운☆세★<br/>당신의 운세가 궁금하다면?<br/><small>빵순이</small></p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                </div>
+                <small class="text-muted">6%</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<div class="bg-light">
+  <footer class="text-muted">
+    <div class="container">
+      <p class="float-right">
+        <a href="#">Back to top</a>
+      </p>
+      <p>Together Wegetall is &copy; Klatn Study</p><br>
+    </div>
+  </footer>
+</div>
+
+</body>
+
+</html>
+<script src="index.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="/docs/4.4/assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
+<script src="/docs/4.4/dist/js/bootstrap.bundle.min.js" integrity="sha384-Iep5TjrwnXOp2AdreAjhlprhxI5Ix8Y3I/zJd1tNQZQmonaE3i6fTdrvIG9YjOWl" crossorigin="anonymous"></script>
+<script>
+  function yet(){
+    alert('준비중입니다!');
+	}
+</script>
+
